@@ -9,7 +9,8 @@ function PageItem(props) {
           <div className="col-lg-6 col-custom">
             <div className="page-item_content">
               <h2>{props.post.title}</h2>
-              {props.post.content && props.post.content.map((c) => <p>{c}</p>)}
+              {props.post.content &&
+                props.post.content.map((c) => <p key={c}>{c}</p>)}
               {props.post.list && <ListTitle list={props.post.list} />}
               {props.post.button && <Button text={props.post.button} />}
 
@@ -22,7 +23,11 @@ function PageItem(props) {
             </div>
           </div>
           <div className="col-lg-6 col-custom ">
-            <div className={`page-item_image ${props.post.styleImg ? props.post.styleImg : "" }`}>
+            <div
+              className={`page-item_image ${
+                props.post.styleImg ? props.post.styleImg : ""
+              }`}
+            >
               <img src={props.post.imgURL} alt="Poho hình ảnh ứng dụng" />
             </div>
             <div className="page-item_block">

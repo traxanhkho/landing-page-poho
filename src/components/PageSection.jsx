@@ -21,7 +21,7 @@ function PageSection(props) {
       render={({ state, fullpageApi }) => {
         return (
           <ReactFullpage.Wrapper>
-            {posts.length > 0 && posts.map((post) => <PageItem post={post} />)}
+            {posts.length > 0 && posts.map((post) => <PageItem key={post._id} post={post} />)}
           </ReactFullpage.Wrapper>
         );
       }}

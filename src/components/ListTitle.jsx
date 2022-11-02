@@ -4,7 +4,7 @@ function ListTitle(props) {
   return (
     <ul className="list-title">
       {props.list.map((item) => (
-        <li>{item}</li>
+        <li key={item}>{item}</li>
       ))}
     </ul>
   );

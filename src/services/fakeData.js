@@ -1,5 +1,6 @@
 const posts = [
   {
+    _id: 1,
     title: "Sàn Thương Mại Điện Tử B2B",
     content: [
       "Sàn thương mại điện tử hay sàn giao dịch thương mại điện tử là nơi diễn ra các hoạt động mua bán, trao đổi hàng hóa của một hoặc nhiều cá nhân, tổ chức cụ thể dưới hình thức website.",
@@ -9,6 +10,7 @@ const posts = [
     button: "video giới thiệu",
   },
   {
+    _id: 2,
     title: "Các Tính Năng Nỗi Bật Của App",
     list: [
       "Đăng sản phẩm trên doanh nghiệp của bạn",
@@ -20,6 +22,7 @@ const posts = [
     imgURL: "/images/phone-3.png",
   },
   {
+    _id: 3,
     title: "Poho Sinh Ra Nhằm Mục Đích",
     list: [
       "Khắc phục tìm kiếm khách hàng khó khăn",
@@ -31,6 +34,7 @@ const posts = [
     imgURL: "/images/phone-4.png",
   },
   {
+    _id: 4,
     title: "Quét mã QR code",
     content: [
       "Quét mã QR code để tải nhanh ứng dụng Poho phù hợp với hệ điều hành của bạn",
