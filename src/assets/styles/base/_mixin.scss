@@ -1,0 +1,4 @@
+@mixin createMover($second: 1s) {
+  -webkit-animation: mover $second infinite alternate;
+  animation: mover $second infinite alternate;
+}

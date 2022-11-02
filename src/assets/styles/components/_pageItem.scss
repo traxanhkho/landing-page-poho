@@ -1,0 +1,51 @@
+.page-item {
+  .page-item_content {
+    position: relative;
+    h2 {
+      font-weight: 900;
+      font-size: 60px;
+      line-height: 72px;
+      color: #fff;
+      text-decoration: capitalize;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 20px;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    button{
+      margin-top:20px ; 
+    }
+
+    .content-cart_img {
+      position: absolute;
+      top: 94%;
+      right: 25%;
+      @include createMover();
+    }
+  }
+
+  .page-item_block {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+
+    .block-left {
+      position: absolute;
+      top: 50%;
+      left: -12px;
+      @include createMover();
+    }
+    .block-bottom {
+      position: absolute;
+      bottom: 12px;
+      left: 50%;
+      @include createMover();
+    }
+  }
+}

@@ -1,0 +1,40 @@
+#fp-nav {
+  top: unset !important;
+  right: unset !important;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%) !important;
+  ul {
+    display: flex;
+    li {
+      &:hover {
+        a {
+          span {
+            margin: -2px 0 0 -2px !important ;
+          }
+        }
+      }
+
+      a {
+        color: transparent    ;
+        &.active {
+          span {
+            background: #1e5bee !important;
+            margin: -2px 0px 0px -8px !important;
+            width: 24px !important;
+            border-radius: 8px !important;
+          }
+        }
+
+        span {
+          background: $bg-nav !important;
+          width: 10px !important;
+          height: 10px !important;
+        }
+        .fp-sr-only {
+          clip: unset !important;
+        }
+      }
+    }
+  }
+}
