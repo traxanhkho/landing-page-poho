@@ -70,7 +70,10 @@ const posts = [
     _id: 4,
     title: "Quét mã QR code",
     content: [
-      "Quét mã QR code để tải nhanh ứng dụng Poho phù hợp với hệ điều hành của bạn",
+      {
+        id: 1,
+        text: "Quét mã QR code để tải nhanh ứng dụng Poho phù hợp với hệ điều hành của bạn",
+      },
     ],
     imgURL: "/images/phone-5.png",
   },
