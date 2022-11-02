@@ -6,8 +6,8 @@ function Header(props) {
     <header className="position-fixed w-100">
       <div className="container-fluid container-custom">
         <div className="header-nav d-flex align-items-center justify-content-between">
-          <h1 className="logo">
-            <a href="#">
+          <h1 className="logo" title="hình ảnh logo công ty Poho - world connect">
+            <a href="#" title="hình ảnh logo công ty Poho - world connect">
               <img src="/images/Logo.svg" alt="công ty world connect - Poho logo" />
             </a>
           </h1>

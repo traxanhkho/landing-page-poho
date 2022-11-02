@@ -1,6 +1,10 @@
 .page-item {
   .page-item_content {
     position: relative;
+    transform: translateX(-150px);
+    opacity: 0;
+    transition: 1s all ease;
+
     h2 {
       font-weight: 900;
       font-size: 60px;
@@ -17,8 +21,8 @@
       margin-bottom: 4px;
     }
 
-    button{
-      margin-top:20px ; 
+    button {
+      margin-top: 20px;
     }
 
     .content-cart_img {
@@ -26,6 +30,18 @@
       top: 94%;
       right: 25%;
       @include createMover();
+    }
+  }
+
+  &.active {
+    .page-item_content {
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+    .page-item_image{
+      transform: translateY(0) !important;
+      opacity: 1 !important;
     }
   }
 

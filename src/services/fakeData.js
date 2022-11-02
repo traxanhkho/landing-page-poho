@@ -16,6 +16,7 @@ const posts = [
       "Nhắn tin, gọi điện trao đổi thông tin",
       "Livestream giới thiệu sản phẩm, doanh nghiệp",
     ],
+    styleImg: "mb-0",
     imgURL: "/images/phone-3.png",
   },
   {

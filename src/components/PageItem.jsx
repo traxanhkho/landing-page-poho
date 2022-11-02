@@ -22,7 +22,7 @@ function PageItem(props) {
             </div>
           </div>
           <div className="col-lg-6 col-custom ">
-            <div className="page-item_image">
+            <div className={`page-item_image ${props.post.styleImg ? props.post.styleImg : "" }`}>
               <img src={props.post.imgURL} alt="Poho hình ảnh ứng dụng" />
             </div>
             <div className="page-item_block">
