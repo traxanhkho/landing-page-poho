@@ -10,7 +10,7 @@ function PageItem(props) {
             <div className="page-item_content">
               <h2>{props.post.title}</h2>
               {props.post.content &&
-                props.post.content.map((c) => <p key={c}>{c}</p>)}
+                props.post.content.map((c) => <p >{c}</p>)}
               {props.post.list && <ListTitle list={props.post.list} />}
               {props.post.button && <Button text={props.post.button} />}
 
