@@ -6,19 +6,19 @@
       font-size: 60px;
       line-height: 72px;
       color: #fff;
-      text-decoration: capitalize;
+      text-transform: capitalize;
       margin-bottom: 20px;
     }
 
     p {
       font-size: 16px;
-      line-height: 20px;
+      line-height: 24px;
       color: #fff;
       margin-bottom: 4px;
     }
 
-    button{
-      margin-top:20px ; 
+    button {
+      margin-top: 20px;
     }
 
     .content-cart_img {
@@ -46,6 +46,14 @@
       bottom: 12px;
       left: 50%;
       @include createMover();
+    }
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .page-item {
+    .page-item_block {
+      display: none;
     }
   }
 }

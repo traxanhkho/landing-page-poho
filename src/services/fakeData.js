@@ -9,7 +9,7 @@ const posts = [
     button: "video giới thiệu",
   },
   {
-    title: "Các Tính Năng Nỗi Bật Của App",
+    title: "Các Tính Năng nổi Bật Của App",
     list: [
       "Đăng sản phẩm trên doanh nghiệp của bạn",
       "Name card điện tử tiện lợi",
@@ -17,7 +17,7 @@ const posts = [
       "Livestream giới thiệu sản phẩm, doanh nghiệp",
     ],
     imgURL: "/images/phone-3.png",
-    style: "mb-0"
+    style: "mb-0",
   },
   {
     title: "Poho Sinh Ra Nhằm Mục Đích",
@@ -28,14 +28,15 @@ const posts = [
       "Giao dịch toàn cầu trể nên đơn giản và dễ dàng hơn",
       "Hành vi người tiêu dùng dần thay đổi từ offline sang online",
     ],
-    imgURL: "/images/phone-4.png",
+    imgURL: "/images/phone-5.png",
   },
   {
     title: "Quét mã QR code",
     content: [
       "Quét mã QR code để tải nhanh ứng dụng Poho phù hợp với hệ điều hành của bạn",
+      "Mở ứng dụng quét mã QR , hướng camera của điện thoại về đoạn mã QR cần quét, ngay sau đó, màn hình điện thoại sẽ hiển thị các thông tin về sản phẩm, thậm chí cả những bình luận, đánh giá của những người mua trước đó.",
     ],
-    imgURL: "/images/phone-5.png",
+    imgURL: "/images/phone-4.png",
   },
 ];
 
