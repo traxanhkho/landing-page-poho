@@ -1,5 +1,9 @@
 import Header from "../src/components/Header";
-import PageSection from "../src/components/PageSection";
+import dynamic from "next/dynamic";
+
+const PageSection = dynamic(() => import("../src/components/PageSection"), {
+  ssr: false,
+});
 
 export default function Home() {
   return (

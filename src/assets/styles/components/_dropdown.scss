@@ -1,0 +1,37 @@
+.header-buttons {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  .dropdown {
+    button {
+      padding: 0 8px;
+      background: #1e5bee;
+      i {
+        font-size: 32px;
+        position: relative;
+        top: 1px;
+        color: #fff;
+      }
+    }
+
+    .dropdown-menu {
+      &.show {
+        top: 4px !important;
+      }
+      .dropdown-item {
+        border-left: 2px solid transparent;
+        &.active {
+          color: $text-btn-color;
+          border-color: $text-btn-color;
+          background: #fff;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header-buttons .dropdown button {
+    background-color: transparent;
+  }
+}

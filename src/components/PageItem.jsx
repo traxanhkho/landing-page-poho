@@ -3,14 +3,18 @@ import ListTitle from "./ListTitle";
 
 function PageItem(props) {
   return (
-    <div className="page-item section fp-responsive">
+    <div
+      className={`page-item section carousel-item ${
+        props.active ? "active" : ""
+      }`}
+    >
       <div className="container-fluid container-custom">
         <div className="row row-custom">
           <div className="col-lg-6 col-custom">
             <div className="page-item_content">
               <h2>{props.post.title}</h2>
               {props.post.content &&
-                props.post.content.map((c) => <p key={c.id}>{c.text}</p>)}
+                props.post.content.map((c, index) => <p key={index}>{c}</p>)}
               {props.post.list && <ListTitle list={props.post.list} />}
               {props.post.button && <Button text={props.post.button} />}
 
@@ -24,9 +28,7 @@ function PageItem(props) {
           </div>
           <div className="col-lg-6 col-custom ">
             <div
-              className={`page-item_image ${
-                props.post.styleImg ? props.post.styleImg : ""
-              }`}
+              className={`page-item_image ${props.post.style ? "mb-0" : ""}`}
             >
               <img src={props.post.imgURL} alt="Poho hình ảnh ứng dụng" />
             </div>

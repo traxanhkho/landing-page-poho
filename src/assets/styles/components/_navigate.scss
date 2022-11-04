@@ -1,0 +1,19 @@
+.carousel {
+  .carousel-indicators {
+    li {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      color: $bg-nav;
+      transition: all 0.2s ease-in-out;
+      border: none;
+
+      &.active {
+        width: 30px;
+        height: 10px;
+        border-radius: 8px;
+        background: $bg-color;
+      }
+    }
+  }
+}

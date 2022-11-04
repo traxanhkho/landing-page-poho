@@ -1,5 +1,5 @@
 .page-root {
-  background-image: url("/images/bg.png");
+  background-image: url("../../images/bg.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -7,24 +7,6 @@
   .page-item {
     position: relative;
 
-    .page-item_image {
-      max-width: 86%;
-      margin: auto;
-      // margin-bottom: 0;
-      position: relative;
-      transform: translateY(-150px);
-      opacity: 0;
-      transition: 1s all linear;
-
-      img {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-      }
-    }
-  }
-
-  .page-item {
     .row.row-custom {
       height: 100vh;
       align-items: center;
@@ -35,6 +17,20 @@
         align-items: center;
       }
     }
+
+    .page-item_image {
+      max-width: 86%;
+      margin: auto;
+      z-index: 10;
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .page-item {
   }
 }
 
@@ -45,47 +41,19 @@
 
 // responsive
 
-@media screen and (max-width: 991px) {
-  .container-custom {
-    padding-left: 40px;
-    padding-right: 40px;
-  }
-
+@media screen and (max-width: 540px) {
   .page-root {
     background-position: left;
-  }
 
-  .page-root .page-item .row.row-custom {
-    height: auto;
-    overflow-x: hidden;
-    margin-top: 70px;
-
-    .page-item_image {
-      max-width: 100%;
+    .container-custom {
+      padding-left: 16px;
+      padding-right: 16px;
     }
-    .page-item_content {
-      width: 100%;
-      .content-cart_img {
-        right: 8%;
-        z-index: -1;
-        img {
-          width: 120px;
-        }
-      }
+
+    .btn-custom {
+      position: relative;
+      z-index: 100;
     }
-  }
-}
-
-@media screen and (min-width: 768px) and (max-width: 991px) {
-  .page-root .page-item .row.row-custom .page-item_image {
-    max-width: 80%;
-  }
-}
-
-@media screen and (max-width: 540px) {
-  .container-custom {
-    padding-left: 16px;
-    padding-right: 16px;
   }
 
   header .btn-custom {
@@ -123,9 +91,40 @@
       }
     }
     .page-item_image {
-      max-width: 100% !important;
       img {
-        margin-top: 48px;
+        // margin-top: 48px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .container-custom {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .page-root {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .page-root .page-item .row.row-custom {
+    height: auto;
+    overflow-x: hidden;
+    margin-top: 70px;
+
+    .page-item_image {
+      max-width: 100%;
+    }
+    .page-item_content {
+      width: 100%;
+      .content-cart_img {
+        right: 8%;
+        z-index: 10;
+        img {
+          width: 120px;
+        }
       }
     }
   }
