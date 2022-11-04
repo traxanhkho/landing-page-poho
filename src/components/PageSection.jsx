@@ -7,7 +7,6 @@ function PageSection(props) {
   const [posts, setPosts] = useState(getAll());
 
   useEffect(() => {
-
     $(".carousel").bind("mousewheel DOMMouseScroll", function (e) {
       if (e.originalEvent.wheelDelta > 0 || e.originalEvent.detail < 0) {
         $(".carousel").carousel("prev");
@@ -22,13 +21,13 @@ function PageSection(props) {
     return (
       <div
         id="carouselIndicators"
-        className="carousel slide vh-100"
+        className="carousel slide"
         data-ride="carousel"
       >
         <ol className="carousel-indicators">
           {posts.map((item, index) => (
             <li
-            key={++index}
+              key={++index}
               data-target="#carouselIndicators"
               data-slide-to={index}
               className={index == 0 ? "active" : ""}

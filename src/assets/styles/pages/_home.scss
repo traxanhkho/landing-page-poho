@@ -105,8 +105,15 @@
   }
 
   .page-root {
+    position: fixed;
     height: 100%;
     overflow: hidden;
+
+    .carousel {
+      .carousel-indicators {
+        position: fixed;
+      }
+    }
   }
 
   .page-root .page-item .row.row-custom {
