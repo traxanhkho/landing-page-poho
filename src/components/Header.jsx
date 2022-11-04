@@ -8,7 +8,7 @@ function Header(props) {
       <div className="container-fluid container-custom">
         <div className="header-nav d-flex align-items-center justify-content-between">
           <h1 className="logo">
-            <a href="https://poho.vn/" target={"_blank"}>
+            <a href="https://poho.vn/" target="_blank" rel="noreferrer" >
               <img
                 src="/images/Logo.svg"
                 alt="công ty world connect - Poho logo"
