@@ -1,12 +1,24 @@
 import { useEffect, useState } from "react";
 import $ from "jquery";
-import { getAll } from "../services/fakeData";
+import { getAll, getFlagImg } from "../services/fakeData";
 import PageItem from "./PageItem";
+import { useRouter } from "next/router";
+import { usePostContext } from "../context/postContext";
 
 function PageSection(props) {
-  const [posts, setPosts] = useState(getAll());
+  const router = useRouter();
+  const { language, setLanguage, setFlagImg } = usePostContext();
+  const [posts, setPosts] = useState([]);
 
   useEffect(() => {
+    const languageQuery = router.query.language;
+
+    if (languageQuery) {
+      setLanguage(languageQuery);
+      setFlagImg(getFlagImg(languageQuery));
+    }
+
+    setPosts(getAll(language));
     $(".carousel").bind("mousewheel DOMMouseScroll", function (e) {
       if (e.originalEvent.wheelDelta > 0 || e.originalEvent.detail < 0) {
         $(".carousel").carousel("prev");
@@ -15,7 +27,7 @@ function PageSection(props) {
       }
       return false;
     });
-  }, [posts]);
+  }, [language, router.asPath]);
 
   if (posts.length > 0) {
     return (

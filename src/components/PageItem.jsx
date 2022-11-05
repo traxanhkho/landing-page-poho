@@ -7,6 +7,7 @@ function PageItem(props) {
       className={`page-item section carousel-item ${
         props.active ? "active" : ""
       }`}
+      data-interval="false"
     >
       <div className="container-fluid container-custom">
         <div className="row row-custom">
@@ -17,7 +18,6 @@ function PageItem(props) {
                 props.post.content.map((c, index) => <p key={index}>{c}</p>)}
               {props.post.list && <ListTitle list={props.post.list} />}
               {props.post.button && <Button text={props.post.button} />}
-
               <div className="content-cart_img">
                 <img
                   src="/images/cart.svg"

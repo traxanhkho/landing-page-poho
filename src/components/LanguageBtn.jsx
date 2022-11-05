@@ -1,18 +1,31 @@
-import React from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import React, { useEffect } from "react";
+import { usePostContext } from "../context/postContext";
 
 function LanguageBtn(props) {
+  const router = useRouter();
+  const { language, flagImg } = usePostContext();
+  // useEffect(() => {}, [flagImg]);
   return (
     <div className="dropdown">
       <button className="btn" data-toggle="dropdown">
-        <i className="fa-solid fa-language"></i>
+        {flagImg && <img src={flagImg} alt="chọn ngôn ngữ" />}
+        <i className="fa-solid fa-chevron-down"></i>
       </button>
       <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a className="dropdown-item active" href="#">
+        <Link
+          className={`dropdown-item ${language == "vn" ? "active" : ""}`}
+          href="/?language=vn"
+        >
           Tiếng Việt (VN)
-        </a>
-        <a className="dropdown-item" href="#">
+        </Link>
+        <Link
+          className={`dropdown-item ${language == "en" ? "active" : ""}`}
+          href="/?language=en"
+        >
           English (EN)
-        </a>
+        </Link>
       </div>
     </div>
   );
