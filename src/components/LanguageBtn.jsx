@@ -16,13 +16,19 @@ function LanguageBtn(props) {
       <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
         <Link
           className={`dropdown-item ${language == "vn" ? "active" : ""}`}
-          href="/?language=vn"
+          href={{
+            pathname: "/",
+            query: { language: "vn" },
+          }}
         >
           Tiếng Việt (VN)
         </Link>
         <Link
           className={`dropdown-item ${language == "en" ? "active" : ""}`}
-          href="/?language=en"
+          href={{
+            pathname: "/",
+            query: { language: "en" },
+          }}
         >
           English (EN)
         </Link>

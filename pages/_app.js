@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <AppWrapper>
-      <Component {...pageProps} />;
+      <Component {...pageProps} />  
     </AppWrapper>
   );
 }

@@ -8,26 +8,38 @@ import { usePostContext } from "../context/postContext";
 function PageSection(props) {
   const router = useRouter();
   const { language, setLanguage, setFlagImg } = usePostContext();
+  const [isSliding, setIsSliding] = useState(false);
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    const languageQuery = router.query.language;
+    const urlParams = new URLSearchParams(window.location.search);
+    const query = urlParams.get("language");
+
+    const languageQuery = query;
 
     if (languageQuery) {
       setLanguage(languageQuery);
       setFlagImg(getFlagImg(languageQuery));
+    } else {
+      setLanguage("vn");
+      setFlagImg(getFlagImg("vn"));
     }
 
     setPosts(getAll(language));
-    $(".carousel").bind("mousewheel DOMMouseScroll", function (e) {
+
+    $("body").bind("mousewheel DOMMouseScroll onWheel", function (e) {
       if (e.originalEvent.wheelDelta > 0 || e.originalEvent.detail < 0) {
-        $(".carousel").carousel("prev");
+        handleSlide("prev");
       } else {
-        $(".carousel").carousel("next");
+        handleSlide("next");
       }
       return false;
     });
   }, [language, router.asPath]);
+
+  const handleSlide = (behavior) => {
+    $(".carousel").carousel(behavior);
+  };
 
   if (posts.length > 0) {
     return (

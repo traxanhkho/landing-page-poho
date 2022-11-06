@@ -1,11 +1,10 @@
 import { createContext, useContext, useState } from "react";
-import { getFlagImg } from "../services/fakeData";
 
 const postContext = createContext();
 
 export function AppWrapper({ children }) {
-  const [language, setLanguage] = useState("vn");
-  const [flagImg, setFlagImg] = useState(getFlagImg(language));
+  const [language, setLanguage] = useState();
+  const [flagImg, setFlagImg] = useState();
 
   return (
     <postContext.Provider
