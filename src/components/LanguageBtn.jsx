@@ -4,9 +4,8 @@ import React, { useEffect } from "react";
 import { usePostContext } from "../context/postContext";
 
 function LanguageBtn(props) {
-  const router = useRouter();
   const { language, flagImg } = usePostContext();
-  // useEffect(() => {}, [flagImg]);
+
   return (
     <div className="dropdown">
       <button className="btn" data-toggle="dropdown">

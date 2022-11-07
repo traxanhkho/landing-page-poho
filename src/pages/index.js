@@ -1,7 +1,7 @@
-import Header from "../src/components/Header";
+import Header from "../components/Header";
 import dynamic from "next/dynamic";
 
-const PageSection = dynamic(() => import("../src/components/PageSection"), {
+const PageSection = dynamic(() => import("../components/PageSection"), {
   ssr: false,
 });
 

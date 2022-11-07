@@ -1,0 +1,32 @@
+.slider-item {
+  &.slick-dotted {
+    margin-bottom: 0;
+  }
+  .slick-dots {
+    position: fixed;
+    bottom: 16px;
+
+    li {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: $bg-nav;
+      transition: all 0.2s ease-in-out;
+      border: none;
+      button {
+        display: none;
+      }
+
+      &.slick-active {
+        width: 30px;
+        height: 10px;
+        border-radius: 8px;
+        background: $bg-color;
+      }
+    }
+  }
+
+  .slick-track {
+    transform: unset;
+  }
+}

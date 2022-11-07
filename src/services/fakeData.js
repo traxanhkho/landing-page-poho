@@ -89,12 +89,12 @@ const posts = {
   },
 };
 
-export const getAll = (language ) => {
+export const getAll = (language) => {
   if (language == "vn") return [...posts.vn.list];
   return [...posts.en.list];
 };
 
-export const getFlagImg = (language ) => {
+export const getFlagImg = (language) => {
   if (language == "vn") return posts.vn.flagImg;
   return posts.en.flagImg;
 };

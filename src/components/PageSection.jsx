@@ -1,49 +1,47 @@
 import { useEffect, useState } from "react";
-import $ from "jquery";
-import { getAll, getFlagImg } from "../services/fakeData";
-import PageItem from "./PageItem";
 import { useRouter } from "next/router";
 import { usePostContext } from "../context/postContext";
+import { start } from "../utils/handleWheelMouse";
+import { getAll, getFlagImg } from "../services/fakeData";
+import PageItem from "./PageItem";
 
 function PageSection(props) {
   const router = useRouter();
-  const { language, setLanguage, setFlagImg } = usePostContext();
-  const [isSliding, setIsSliding] = useState(false);
-  const [posts, setPosts] = useState([]);
+  const { setFlagImg, language, setLanguage } = usePostContext();
+  const [posts, setPosts] = useState(getAll("vn"));
 
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const query = urlParams.get("language");
 
-    const languageQuery = query;
-
-    if (languageQuery) {
-      setLanguage(languageQuery);
-      setFlagImg(getFlagImg(languageQuery));
-    } else {
-      setLanguage("vn");
-      setFlagImg(getFlagImg("vn"));
+    if (query) {
+      setLanguage(query);
+      setFlagImg(getFlagImg(query));
     }
 
     setPosts(getAll(language));
 
-    $("body").bind("mousewheel DOMMouseScroll onWheel", function (e) {
-      if (e.originalEvent.wheelDelta > 0 || e.originalEvent.detail < 0) {
-        handleSlide("prev");
-      } else {
-        handleSlide("next");
-      }
-      return false;
-    });
+    start();
   }, [language, router.asPath]);
 
-  const handleSlide = (behavior) => {
-    $(".carousel").carousel(behavior);
-  };
+  return (
+    <div className="slider-item">
+      {posts &&
+        posts.map((post, index) => (
+          <PageItem
+            key={++index}
+            post={post}
+            active={index == 0 ? true : false}
+          />
+        ))}
+    </div>
+  );
+}
 
-  if (posts.length > 0) {
-    return (
-      <div
+export default PageSection;
+
+{
+  /* <div
         id="carouselIndicators"
         className="carousel slide"
         data-ride="carousel"
@@ -68,9 +66,5 @@ function PageSection(props) {
               />
             ))}
         </div>
-      </div>
-    );
-  }
+      </div> */
 }
-
-export default PageSection;

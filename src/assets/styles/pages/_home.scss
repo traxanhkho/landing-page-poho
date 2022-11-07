@@ -83,13 +83,10 @@
 
       .content-cart_img {
         right: 4%;
-        img {
-          width: 120px;
-        }
       }
     }
     .page-item_image {
-      padding-top: 64px;
+      padding-top: 8px;
     }
   }
 }
@@ -103,6 +100,7 @@
   .page-root {
     position: fixed;
     height: 100%;
+    width: 100%;
     overflow: hidden;
 
     .carousel {
@@ -126,7 +124,7 @@
         right: 8%;
         z-index: 10;
         img {
-          width: 120px;
+          width: 80px;
         }
       }
     }
